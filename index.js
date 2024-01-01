@@ -1,3 +1,5 @@
+// getElementById method
+
 const mainheader = document.getElementById('main-heading');
 mainheader.textContent = 'Fruit World';
 mainheader.style.color = 'orange';
@@ -11,6 +13,17 @@ basketheading.style.color = 'green';
 
 const thanks = document.getElementById('thanks');
 thanks.textContent = 'Please visit us again';
+
+// getElementsByClassName Method
+
+const li = document.getElementsByClassName('fruit');
+li[2].style.backgroundColor = 'orange';
+
+for (let i = 0; i < li.length; i++) {
+    li[i].style.fontWeight = 'bold';
+}
+
+
 
 
 
