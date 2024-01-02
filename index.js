@@ -37,39 +37,75 @@
 // ('fruit : last-child');
 //('fruit : nth-child(2)')
 
-const header = document.querySelector('#main-heading');
-header.style.textAlign = 'right';
+// const header = document.querySelector('#main-heading');
+// header.style.textAlign = 'right';
 
-const Bheader = document.querySelector('#basket-heading');
-Bheader.style.color = 'brown';
-Bheader.style.marginLeft = '30px';
+// const Bheader = document.querySelector('#basket-heading');
+// Bheader.style.color = 'brown';
+// Bheader.style.marginLeft = '30px';
 
 
 
-const fruits = document.querySelector('.fruits');
-fruits.style.backgroundColor = 'gray';
-fruits.style.padding = '30px';
-fruits.style.margin = '30px';
-fruits.style.borderRadius = '5px';
-fruits.style.listStyleType = 'none';
-fruits.style.width = '50%';
+// const fruits = document.querySelector('.fruits');
+// fruits.style.backgroundColor = 'gray';
+// fruits.style.padding = '30px';
+// fruits.style.margin = '30px';
+// fruits.style.borderRadius = '5px';
+// fruits.style.listStyleType = 'none';
+// fruits.style.width = '50%';
 
 
 // querySelectorAll  is  used to grab  all  Elements with class/tag 
 
-const fruit = document.querySelectorAll('.fruit');
+// const fruit = document.querySelectorAll('.fruit');
 
-for (let i = 0; i < fruit.length; i++) {
-    fruit[i].style.backgroundColor = 'white';
-    fruit[i].style.margin = '10px';
-    fruit[i].style.padding = '10px';
-    fruit[i].style.borderRadius = '5px';
-}
+// for (let i = 0; i < fruit.length; i++) {
+//     fruit[i].style.backgroundColor = 'white';
+//     fruit[i].style.margin = '10px';
+//     fruit[i].style.padding = '10px';
+//     fruit[i].style.borderRadius = '5px';
+// }
 
-const oddfruits = document.querySelectorAll(' .fruit:nth-child(odd) ');
-for (let i = 0; i < oddfruits.length; i++) {
-    oddfruits[i].style.backgroundColor = 'brown';
-}
+// const oddfruits = document.querySelectorAll(' .fruit:nth-child(odd) ');
+// for (let i = 0; i < oddfruits.length; i++) {
+//     oddfruits[i].style.backgroundColor = 'brown';
+// }
+
+
+// createElement  domrelation
+
+const head = document.createElement('h3');
+const headPara = document.createTextNode('Buy high quality organic fruits online');
+
+head.appendChild(headPara);
+
+head.style.fontStyle = 'italic';
+
+const divs = document.getElementsByTagName('div');
+const FirstDiv = divs[0];
+
+FirstDiv.appendChild(head);
+
+const para = document.createElement('p');
+const ParaText = document.createTextNode('Total fruits: 4');
+para.appendChild(ParaText);
+
+const SecDiv = divs[1];
+// const fruits = document.getElementsByClassName('')
+const basketHeading = document.getElementById('basket-heading');
+SecDiv.insertBefore(para, basketHeading);
+
+para.id = 'fruits-total';
+
+
+
+
+
+
+
+
+
+
 
 
 
