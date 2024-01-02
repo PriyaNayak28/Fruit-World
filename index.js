@@ -66,9 +66,9 @@ for (let i = 0; i < fruit.length; i++) {
     fruit[i].style.borderRadius = '5px';
 }
 
-const oddfruit = document.querySelectorAll(' .fruit:nth-child(odd) ');
-for (let i = 0; i < oddfruit.length; i++) {
-    oddfruit[i].style.backgroundColor = 'brown';
+const oddfruits = document.querySelectorAll(' .fruit:nth-child(odd) ');
+for (let i = 0; i < oddfruits.length; i++) {
+    oddfruits[i].style.backgroundColor = 'brown';
 }
 
 
