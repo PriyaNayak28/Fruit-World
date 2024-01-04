@@ -147,6 +147,22 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     })
 
+    const filter = this.getElementById('filter');
+    filter.addEventListener('keyup', function (event) {
+        const textEntered = event.target.value.toLowerCase();
+        const fruitItem = document.getElementsByClassName('fruit');
+        for (let i = 0; i < fruitItem.length; i++) {
+            const currentFruitText = fruitItem[i].firstChild.textContent.toLowerCase();
+            if (currentFruitText.indexOf(textEntered) === -1) {
+                fruitItem[i].style.display = 'none';
+            }
+            else {
+                fruitItem[i].style.display = 'flex';
+            }
+        }
+    });
+
+
 
 });
 
