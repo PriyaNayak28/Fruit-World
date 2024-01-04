@@ -100,26 +100,35 @@
 
 // ADD AND DELETE FRUITS.................................................. 
 
-// const form = document.querySelector('form');
-// const fruitsContainer = document.querySelector('.fruits');
+// document.addEventListener('DOMContentLoaded', function () {
 
-// form.addEventListener('submit', function (event) {
-//     event.preventDefault();
-//     const fruitToAdd = document.getElementById('fruit-to-add');
-//     const newLi = document.createElement('li');
-//     const newLiText = document.createTextNode(fruitToAdd.value);
-//     newLi.appendChild(newLiText);
-//     newLi.className = 'fruit';
-//     const deleteBtn = document.createElement('button');
-//     const deleteBtnText = document.createTextNode('x');
-//     deleteBtn.appendChild(deleteBtnText);
-//     deleteBtn.className = 'delete-btn';
-//     newLi.appendChild(deleteBtn);
-//     fruitsContainer.appendChild(newLi);
+
+//     const form = document.querySelector('form');
+//     const fruitsContainer = document.querySelector('.fruits');
+
+//     form.addEventListener('submit', function (event) {
+//         event.preventDefault();
+//         const fruitToAdd = document.getElementById('fruit-to-add');
+//         // making new list
+//         const newLi = document.createElement('li');
+//         const newLiText = document.createTextNode(fruitToAdd.value);
+//         newLi.appendChild(newLiText);
+//         newLi.className = 'fruit';
+
+//         // making dlt btn
+//         const deleteBtn = document.createElement('button');
+//         const deleteBtnText = document.createTextNode('x');
+//         deleteBtn.appendChild(deleteBtnText);
+//         deleteBtn.className = 'delete-btn';
+//         newLi.appendChild(deleteBtn);
+//         fruitsContainer.appendChild(newLi);
+//     });
 // });
 
 
+
 document.addEventListener('DOMContentLoaded', function () {
+
     const form = document.querySelector('form');
     const fruitsContainer = document.querySelector('.fruits');
 
@@ -127,15 +136,19 @@ document.addEventListener('DOMContentLoaded', function () {
         event.preventDefault();
         const fruitToAdd = document.getElementById('fruit-to-add');
         const newLi = document.createElement('li');
-        const newLiText = document.createTextNode(fruitToAdd.value);
-        newLi.appendChild(newLiText);
-        newLi.className = 'fruit';
-        const deleteBtn = document.createElement('button');
-        const deleteBtnText = document.createTextNode('x');
-        deleteBtn.appendChild(deleteBtnText);
-        deleteBtn.className = 'delete-btn';
-        newLi.appendChild(deleteBtn);
+        newLi.innerHTML = fruitToAdd.value + '<button class="delete-btn">x</button>';
         fruitsContainer.appendChild(newLi);
     });
+
+    fruitsContainer.addEventListener('click', function (event) {
+        if (event.target.classList.contains('delete-btn')) {
+            deletefruit = event.target.parentElement;
+            fruitsContainer.removeChild(deletefruit);
+        }
+    })
+
+
 });
+
+
 
