@@ -127,6 +127,33 @@
 
 
 
+// document.addEventListener('DOMContentLoaded', function () {
+
+//     const form = document.querySelector('form');
+//     const fruitsContainer = document.querySelector('.fruits');
+
+//     form.addEventListener('submit', function (event) {
+//         event.preventDefault();
+//         const fruitToAdd = document.getElementById('fruit-to-add');
+//         const newLi = document.createElement('li');
+
+//         const para = document.createElement('p');
+//         const input = document.createElement('input');
+//         input.placeholder = 'Decription..';
+//         input.id = 'decriptionFruit';
+//         para.appendChild(input);
+//         const decriptionFruit = document.getElementById('decriptionFruit');
+//         const btn = document.querySelector('button');
+//         form.insertBefore(para, btn);
+//         input.style.fontStyle = 'italic';
+
+//         newLi.innerHTML = fruitToAdd.value + decriptionFruit.value + '<button class="delete-btn">x</button>' + '<button class="edit-btn">edit</button>';
+//         fruitsContainer.appendChild(newLi);
+//         newLi.appendChild(para);
+
+
+//     });
+
 document.addEventListener('DOMContentLoaded', function () {
 
     const form = document.querySelector('form');
@@ -136,7 +163,21 @@ document.addEventListener('DOMContentLoaded', function () {
         event.preventDefault();
         const fruitToAdd = document.getElementById('fruit-to-add');
         const newLi = document.createElement('li');
-        newLi.innerHTML = fruitToAdd.value + '<button class="delete-btn">x</button>';
+
+        const para = document.createElement('p');
+        const input = document.createElement('input');
+        input.placeholder = 'Decription..';
+        input.id = 'decriptionFruit';
+        para.appendChild(input);
+        const decriptionFruit = document.getElementById('decriptionFruit');
+        const btn = document.querySelector('button');
+        form.insertBefore(para, btn);
+        input.style.fontStyle = 'italic';
+        para.innerHTML = decriptionFruit.value;
+        para.class = 'inputFruit';
+
+        newLi.innerHTML = fruitToAdd.value + '<button class="delete-btn">x</button>' + '<button class="edit-btn">edit</button>';
+        newLi.appendChild(para);
         fruitsContainer.appendChild(newLi);
     });
 
@@ -151,6 +192,7 @@ document.addEventListener('DOMContentLoaded', function () {
     filter.addEventListener('keyup', function (event) {
         const textEntered = event.target.value.toLowerCase();
         const fruitItem = document.getElementsByClassName('fruit');
+
         for (let i = 0; i < fruitItem.length; i++) {
             const currentFruitText = fruitItem[i].firstChild.textContent.toLowerCase();
             if (currentFruitText.indexOf(textEntered) === -1) {
@@ -160,11 +202,37 @@ document.addEventListener('DOMContentLoaded', function () {
                 fruitItem[i].style.display = 'flex';
             }
         }
+
+
+
+        const fruit = document.getElementsByClassName('inputFruit');
+        for (let i = 0; i < fruit.length; i++) {
+            const fruitText = fruit[i].firstChild.textContent.toLowerCase();
+            if (fruitText.indexOf(textEntered) === -1) {
+                fruit[i].style.display = 'none';
+            }
+            else {
+                fruit[i].style.display = 'flex';
+            }
+        }
+
+
+
+
+
+
+
     });
 
 
 
+
+
+
+
 });
+
+
 
 
 
